@@ -8,14 +8,15 @@ def arg_parse():
     parser = argparse.ArgumentParser(
         prog='gpt', description='Question to ask GPT')
     parser.add_argument('q', help='Enter question to ask GPT')
-    parser.add_argument('tokens' type=ints, help='The max number of tokens for your response', default=200)
+    parser.add_argument(
+        'tokens', type=int, help='The max number of tokens for your response', default=200)
     return parser.parse_args()
 
 
 def main():
     args = arg_parse()
     if args.q:
-        print(ask_question(args.q))
+        print(ask_question(args.q, args.tokens))
     else:
         return None
 
