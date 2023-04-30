@@ -1,1 +1,1 @@
- pip install --user -e .
+To install, run `pip install --user -e .` from gpt2 directory
