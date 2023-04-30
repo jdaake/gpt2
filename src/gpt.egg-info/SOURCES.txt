@@ -1,0 +1,10 @@
+README.rst
+setup.py
+src/gpt/__init__.py
+src/gpt/cli.py
+src/gpt.egg-info/PKG-INFO
+src/gpt.egg-info/SOURCES.txt
+src/gpt.egg-info/dependency_links.txt
+src/gpt.egg-info/entry_points.txt
+src/gpt.egg-info/requires.txt
+src/gpt.egg-info/top_level.txt

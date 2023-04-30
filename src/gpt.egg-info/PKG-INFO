@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: gpt
+Version: 1.0.0
+Summary: OpenAI Completion API CLI Utility
+Author: Jordan Daake
+Author-email: daakejl@gmail.com
+
+ pip install --user -e .
