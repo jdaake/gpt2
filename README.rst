@@ -1,1 +1,2 @@
-To install, run `pip install --user -e .` from gpt2 directory
+# Installation
+- run `pip install --user -e .` from gpt2 directory
