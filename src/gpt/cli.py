@@ -7,7 +7,7 @@ openai.api_key = ''
 def arg_parse():
     parser = argparse.ArgumentParser(
         prog='gpt', description='Question to ask GPT')
-    parser.add_argument('q', help='Enter question to ask GPT')
+    parser.add_argument('prompt', help='Enter prompt for GPT')
     parser.add_argument(
         'tokens', type=int, help='The max number of tokens for your response', default=200)
     return parser.parse_args()
@@ -15,8 +15,8 @@ def arg_parse():
 
 def main():
     args = arg_parse()
-    if args.q:
-        print(ask_question(args.q, args.tokens))
+    if args.prompt and args.tokens:
+        print(ask_question(args.prompt, args.tokens))
     else:
         return None
 
