@@ -12,7 +12,7 @@ setup(
     author_email='daakejl@gmail.com',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    install_requires=['openai', 'python-dotenv'],
+    install_requires=['openai'],
     entry_points={
         'console_scripts': 'gpt=gpt.cli:main',
     }
