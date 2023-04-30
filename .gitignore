@@ -1,1 +1,3 @@
 .vscode
+src/gpt/__pycache__
+src/gpt/gpt.egg-info
