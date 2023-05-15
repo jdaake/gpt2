@@ -5,8 +5,8 @@ with open('README.md', encoding='UTF-8') as f:
 
 setup(
     name='gpt',
-    version='1.0.0',
-    description='OpenAI Completion API CLI Utility',
+    version='2.0.0',
+    description='OpenAI Chat Completion API CLI Utility',
     long_description=readme,
     author='Jordan Daake',
     author_email='daakejl@gmail.com',
