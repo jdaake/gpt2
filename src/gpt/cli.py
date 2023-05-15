@@ -23,39 +23,22 @@ def main():
 
 def ask_question(question: str, tokens: int):
     """
-    Function: ask_question
-
-    Description:
-    The function "ask_question" takes two arguments. The first argument is a string "question" which represents the question to be asked. The second argument is an integer "tokens" which represents the maximum number of tokens to be used for generating the answer to the question.
-
-    This function uses OpenAI's ChatCompletion API to generate a response to the question asked. It creates a chat conversation with a chatbot using the GPT-3.5-turbo model and sends the question as a message to the chatbot. The chatbot generates a response using the context of the conversation and returns the response to the function. The function then prints the response.
+    ask_question(question: str, tokens: int) is a function that is used to generate prompts using OpenAI’s text-davinci-003 model.
 
     Parameters:
-    - question (str): A string representing the question to be asked
-    - tokens (int): An integer representing the maximum number of tokens to be used for generating the answer
+    question (str): a question the user wants to ask.
+    tokens (int): the maximum number of tokens in the generated responses.
 
-    Return value:
-    The function doesn't return any value, but it prints the generated response to the console.
-
-    Example usage:
-    ```
-    ask_question("What is the meaning of life?", 100)
-    ```
-
-    Output:
-    ```
-    The meaning of life is subjective and varies from person to person. Some people find meaning in family, others in work, and still others in spirituality. Ultimately, the meaning of life is what you make it.
-    ```
+    Returns:
+    The generated response for the given question.None
     """
-    for res in openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {"role": "user", "content": f'{question}'}
-        ],
+    for data in openai.Completion.create(
+        model="text-davinci-003",
+        prompt=f"{question}",
         max_tokens=tokens,
         stream=True
     ):
-        if res['choices'][0].delta.get('content'):
-            print(res['choices'][0].delta.content, end="", flush=True)
+        if data['choices'][0].text:
+            print(data['choices'][0].text, end="", flush=True)
         else:
             print('')
