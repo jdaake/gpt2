@@ -30,7 +30,7 @@ def ask_question(question: str, tokens: int):
     tokens (int): the maximum number of tokens in the generated responses.
 
     Returns:
-    The generated response for the given question.None
+    The generated response for the given question.
     """
     for data in openai.Completion.create(
         model="text-davinci-003",
