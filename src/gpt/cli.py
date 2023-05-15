@@ -18,13 +18,25 @@ def main():
     if args.prompt and args.tokens:
         print(ask_question(args.prompt, args.tokens))
     else:
-        return None
+        return
 
 
 def ask_question(question: str, tokens: int):
-    res = openai.Completion.create(
+    """
+    ask_question(question: str, tokens: int) is a function that is used to generate prompts using OpenAI’s text-davinci-003 model.
+
+    Parameters:
+    question (str): a question the user wants to ask.
+    tokens (int): the maximum number of tokens in the generated responses.
+
+    Returns:
+    The generated response for the given question.None
+    """
+    for data in openai.Completion.create(
         model="text-davinci-003",
         prompt=f"{question}",
-        max_tokens=tokens
-    )
-    return res['choices'][0]['text']
+        max_tokens=tokens,
+        stream=True
+    ):
+        print(data['choices'][0].text, end="", flush=True)
+    return
