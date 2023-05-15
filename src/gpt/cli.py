@@ -28,7 +28,7 @@ def ask_question(question: str, tokens: int):
     Description:
     The function "ask_question" takes two arguments. The first argument is a string "question" which represents the question to be asked. The second argument is an integer "tokens" which represents the maximum number of tokens to be used for generating the answer to the question.
 
-    This function uses OpenAI's ChatCompletion API to generate a response to the question asked. It creates a chat conversation with a chatbot using the GPT-3.5-turbo model and sends the question as a message to the chatbot. The chatbot generates a response using the context of the conversation and returns the response to the function. The function then prints the response to the console.
+    This function uses OpenAI's ChatCompletion API to generate a response to the question asked. It creates a chat conversation with a chatbot using the GPT-3.5-turbo model and sends the question as a message to the chatbot. The chatbot generates a response using the context of the conversation and returns the response to the function. The function then returns the response.
 
     Parameters:
     - question (str): A string representing the question to be asked
@@ -54,4 +54,4 @@ def ask_question(question: str, tokens: int):
         ],
         max_tokens=tokens,
     )
-    print(res['choices'][0].message.content)
+    return res['choices'][0].message.content
